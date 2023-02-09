@@ -13,7 +13,7 @@ React form, adding notes to a form.
 - TailwindCss
 
 ## Preview here
-[Go Live](https://https://reactform-addnote.netlify.app/)
+[Go Live](https://reactform-addnote.netlify.app/)
 
 
 ## Contact
