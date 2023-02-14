@@ -8,33 +8,35 @@ function App() {
 
   const handleSubmit= (e)=> {
 e.preventDefault();
-setNotes(notes.concat({lists}))
+setNotes(notes.concat(lists))
 setLists("");
   }
   
   return (
-    <div className="App">
-      <h1 className="mb-[1rem] text-3xl">Add Note</h1>
+    <div className="App mt-16">
+      <h1 className="mb-8 text-5xl font-bold">Add Note</h1>
       <form onSubmit={handleSubmit}>
         <input
-          className="px-4 py-2 mb-[1rem]"
+          className="px-8 py-4 mb-10"
           type="text"
           value={lists}
           onChange={(e) => setLists(e.target.value)}
         />
         <br />
         <button
-          className="bg-[blue] text-[white] mb-[1rem] px-6 py-2 rounded-full"
+          className="bg-[blue] text-[white] text-3xl mb-[1rem] px-10 py-4 rounded-full"
           type="submit"
         >
           Add
         </button>
+        <ul className="bg-[blue] w-max  ml-[20rem] px-16 py-8">
+          {notes.map((note, index) => (
+            <li key={`notes=${index}`} className="list-disc m-4 text-3xl">
+              {note}
+            </li>
+          ))}
+        </ul>
       </form>
-      <div className="bg-[blue] w-[20rem] h-[20rem] ml-[10rem] px-[1rem] py-[1rem]">
-        {notes.map((note, index) => (
-          <li>{note.lists}</li>
-        ))}
-      </div>
     </div>
   );
 }
