@@ -30,8 +30,8 @@ function App() {
           Add
         </button>
         <ul className="bg-[blue] w-max  ml-[5rem] px-16 py-8">
-          {notes.map((note) => (
-            <li className="list-disc m-4 text-xl">{note}</li>
+          {notes.map((note, index) => (
+            <li key={`notes- ${index}`} className="list-disc m-4 text-xl">{note}</li>
           ))}
         </ul>
       </form>
