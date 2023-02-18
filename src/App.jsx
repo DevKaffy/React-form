@@ -1,17 +1,17 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
 function App() {
-  const initialNote =['Hello']
-  const [lists, setLists] = useState("")
+  const initialNote = ["Hello"];
+  const [lists, setLists] = useState("");
   const [notes, setNotes] = useState(initialNote);
 
-  const handleSubmit= (e)=> {
-e.preventDefault();
-setNotes(notes.concat(lists))
-setLists("");
-  }
-  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setNotes(notes.concat(lists));
+    setLists("");
+  };
+
   return (
     <div className="App mt-16">
       <h1 className="mb-8 text-5xl font-bold">Add Note</h1>
@@ -24,16 +24,14 @@ setLists("");
         />
         <br />
         <button
-          className="bg-[blue] text-[white] text-3xl mb-[1rem] px-10 py-4 rounded-full"
+          className="bg-[blue] text-[white] font-bold mb-[1rem] px-10 py-4 rounded-full"
           type="submit"
         >
           Add
         </button>
-        <ul className="bg-[blue] w-max  ml-[20rem] px-16 py-8">
-          {notes.map((note, index) => (
-            <li key={`notes=${index}`} className="list-disc m-4 text-3xl">
-              {note}
-            </li>
+        <ul className="bg-[blue] w-max  ml-[5rem] px-16 py-8">
+          {notes.map((note) => (
+            <li className="list-disc m-4 text-xl">{note}</li>
           ))}
         </ul>
       </form>
@@ -41,4 +39,4 @@ setLists("");
   );
 }
 
-export default App
+export default App;
